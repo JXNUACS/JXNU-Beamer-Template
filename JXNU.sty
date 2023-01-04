@@ -15,6 +15,8 @@
 \setCJKmainfont[ItalicFont = LXGW WenKai, BoldItalicFont = LXGW WenKai Bold]{Source Han Serif SC}
 \setCJKsansfont[ItalicFont = LXGW WenKai, BoldItalicFont = LXGW WenKai Bold]{Source Han Sans SC}
 \setCJKmonofont[ItalicFont = LXGW WenKai, BoldItalicFont = LXGW WenKai Bold]{FZHeiFangS}
+% 正文字体应使用无衬线字体，但数学公式统一调整为原本 article 等文档类下的衬线字体
+\usefonttheme{professionalfonts}
 %---------------------------------------------------------------------------------------------------------%
 
 %-------------------------------------------Logo Settings-------------------------------------------------%
@@ -97,13 +99,13 @@
 	\end{frame}
 }
 }
-\AtBeginSubsection[]{
-    \LogoOn
-	\begin{frame}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
-	\end{frame}
-    \LogoOff
-}
+%\AtBeginSubsection[]{
+%    \LogoOn
+%	\begin{frame}
+%		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+%	\end{frame}
+%    \LogoOff
+%}
 %--------------------------------------------------------------------------------%
 \mode
 <all>
