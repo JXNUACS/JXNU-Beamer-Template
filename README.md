@@ -4,4 +4,4 @@
 Prepared by Association of Computer Science(Weiqi Yan).
 
 # Demo
-![](.\img\1.png)
+![](./img/1.png)
