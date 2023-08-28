@@ -7,7 +7,9 @@
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{xcolor}
-
+\usepackage[T1]{fontenc}
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
 %-------------------------------------------Font Settings-------------------------------------------------%
 % 设置 tt 字体族使用 Cascadia Mono
 \setmonofont[BoldFont = Cascadia Mono SemiBold]{Cascadia Mono SemiLight}
@@ -25,6 +27,36 @@
     \pgfputat{\pgfxy(-11.4,0)}{\includegraphics[height=1cm]{pic/JXNU_logo.png}}
 }
 \LogoOff
+%---------------------------------------------------------------------------------------------------------%
+
+
+%-------------------------------------------Background Settings-------------------------------------------%
+\pgfdeclareimage[width=5cm]{jxnubackground}{pic/JXNU_back.png}
+\setbeamertemplate{background canvas}{
+    \begin{picture}(100,100)
+        \put(225, -150) {\pgfuseimage{jxnubackground}}
+    \end{picture}
+}
+%---------------------------------------------------------------------------------------------------------%
+
+%-------------------------------------------Color Settings------------------------------------------------%
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{RGB}{161,56,56}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+\definecolor{jxnured}{RGB}{237,82,82}
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{jxnured},    % Custom highlighting style
+    stringstyle=\color{\left( deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
 %---------------------------------------------------------------------------------------------------------%
 
 %\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
@@ -107,5 +139,19 @@
 %    \LogoOff
 %}
 %--------------------------------------------------------------------------------%
+
+%------------------------------Other Settings------------------------------------%
+% 调整左右边距.
+\setbeamersize{text margin left=0.049\paperwidth, text margin right=0.049\paperwidth}
+% 设置目录深度为 2 (显示至 subsection).
+\setcounter{tocdepth}{2}
+% 设置图片路径为项目文件夹下 `image' `images' `figure' `figures'.
+\graphicspath{{image/}{images/}{figure/}{figures/}{resources/}}
+% 半透明化尚未出现的内容.
+\setbeamercovered{transparent}
+% 导航栏为空.
+\beamertemplatenavigationsymbolsempty
+
+
 \mode
 <all>
